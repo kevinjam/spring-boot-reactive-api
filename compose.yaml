@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=customer_db'
+      - 'POSTGRES_PASSWORD=secret'
+      - 'POSTGRES_USER=user'
+    ports:
+      - '5432:5432'
+  zipkin:
+    image: 'openzipkin/zipkin:latest'
+    ports:
+      - '9411:9411'
+
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    extra_hosts: [ 'host.docker.internal:host-gateway' ]
+    restart: always
+    ports:
+      - 9090:9090
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    extra_hosts: [ 'host.docker.internal:host-gateway' ]
+    restart: always
+    ports:
+      - 3000:3000
+
