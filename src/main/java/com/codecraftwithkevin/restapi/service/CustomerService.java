@@ -1,7 +1,7 @@
 package com.codecraftwithkevin.restapi.service;
 
 
-import com.codecraftwithkevin.restapi.controller.exceptions.CustomerNotFoundException;
+import com.codecraftwithkevin.restapi.exceptions.CustomerNotFoundException;
 import com.codecraftwithkevin.restapi.entity.Customer;
 import com.codecraftwithkevin.restapi.repository.CustomerRepository;
 import com.codecraftwithkevin.restapi.request.CustomerRequest;

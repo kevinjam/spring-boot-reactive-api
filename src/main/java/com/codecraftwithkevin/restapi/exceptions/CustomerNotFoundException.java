@@ -1,4 +1,4 @@
-package com.codecraftwithkevin.restapi.controller.exceptions;
+package com.codecraftwithkevin.restapi.exceptions;
 
 public class CustomerNotFoundException extends RuntimeException {
     public CustomerNotFoundException(Long id) {
